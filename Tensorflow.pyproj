@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Tensorflow</Name>
     <RootNamespace>Tensorflow</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env_tensor|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,10 +25,10 @@
     <Compile Include="Tensorflow.py" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env\">
-      <Id>env</Id>
+    <Interpreter Include="env_tensor\">
+      <Id>env_tensor</Id>
       <Version>3.9</Version>
-      <Description>env (Python 3.9 (64-bit))</Description>
+      <Description>env_tensor (Python 3.9 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
