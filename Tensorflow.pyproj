@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c9deaf68-1086-4296-b67f-bde6db003096</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tensorflow.py</StartupFile>
+    <StartupFile>source\ANN.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -12,6 +12,7 @@
     <Name>Tensorflow</Name>
     <RootNamespace>Tensorflow</RootNamespace>
     <InterpreterId>MSBuild|env_tensor|$(MSBuildProjectFullPath)</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +23,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Tensorflow.py" />
+    <Compile Include="source\ANN.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="source\sample_classify.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env_tensor\">
@@ -34,6 +38,9 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="source\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
